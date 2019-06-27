@@ -18,6 +18,6 @@ module.exports.config = {
     "usage": `${Config.prefix}createchannel <channel-name> [nsfw]`,
     "aliases": ["cc", "create"],
     "category": "miscellaneous",
-    "description": "Displays all commands that the bot has.",
+    "description": "Creates new channel with channel-name and nsfw if specified",
     "accessableby": "Admin"
 }
