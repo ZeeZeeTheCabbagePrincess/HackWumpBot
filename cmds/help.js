@@ -24,13 +24,29 @@ module.exports.run = async (bot, message, args) => {
         .setColor('RANDOM')
         .setDescription(`${message.author.username} check your dms!`)
 
+
+        let cmds = "";
+        bot.commands.forEach(command => {
+            console.log(command.config.name)
+            cmds += `\`\`${command.config.name}\`\`\n`
+        });
+
         let Sembed = new Discord.RichEmbed()
         .setColor("RANDOM")
         .setAuthor(`HackWump Help`, message.guild.iconURL)
         .setThumbnail(bot.user.displayAvatarURL)
         .setTimestamp()
         .setDescription(`These are the avaliable commands for the HackWump!\nThe bot prefix is: ${prefix}`)
-        .addField(`Commands:`, "``Ping``")
+        .addField(`Commands:`, cmds)
         .setFooter("HackWump", bot.user.displayAvatarURL)
         message.channel.send(Sembed)
+    }
+
+    module.exports.config = {
+        name: "help",
+        aliases: ["h", "halp", "commands"],
+        usage: "(command)",
+        category: "miscellaneous",
+        description: "Displays all commands that the bot has.",
+        accessableby: "Members"
     }

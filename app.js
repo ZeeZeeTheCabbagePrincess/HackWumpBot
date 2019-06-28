@@ -25,6 +25,7 @@ fs.readdir("./events/", (err, files) => {
 	  delete require.cache[require.resolve(`./events/${file}`)];
 	});
   });
+  
 bot.commands = new Enmap();
 
 fs.readdir("./cmds/", (err, files) => {
