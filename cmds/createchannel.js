@@ -16,7 +16,7 @@ module.exports.run = async(bot, message, args) => {
 module.exports.config = {
     "name": `createchannel`,
     "usage": `${Config.Prefix}createchannel <channel-name> [nsfw]`,
-    "aliases": ["cc", "create"],
+    "aliases": ["cc", "createc"],
     "category": "miscellaneous",
     "description": "Creates new channel with channel-name and nsfw if specified",
     "accessableby": "Admin"
