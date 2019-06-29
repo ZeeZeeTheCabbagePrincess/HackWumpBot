@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args) => {
 
 module.exports.config = {
     "name": `ban`,
-    "usage": `${Config.prefix}ban [user]`,
+    "usage": `${Config.Prefix}ban [user]`,
     "aliases": ["Ban", "banish"],
     "category": "miscellaneous",
     "description": "bans the mentioned user",

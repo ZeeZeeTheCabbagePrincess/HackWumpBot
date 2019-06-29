@@ -1,7 +1,7 @@
 const Config = require("../config.json");
 
 module.exports.run = async(bot, message, args) => {
-    if (args.length <= 0 || args.length > 2) return message.channel.send(`Invalid number of arguments.\n${help.usage}`);
+    if (args.length <= 0 || args.length > 2) return message.channel.send(`Invalid number of arguments.\n${this.config.usage}`);
     if (!message.member.hasPermission("MANAGE_CHANNELS")) return message.channel.send(`You don't have the manage channels permission.`);
 
     let channelName = args[0];
@@ -15,7 +15,7 @@ module.exports.run = async(bot, message, args) => {
 
 module.exports.config = {
     "name": `createchannel`,
-    "usage": `${Config.prefix}createchannel <channel-name> [nsfw]`,
+    "usage": `${Config.Prefix}createchannel <channel-name> [nsfw]`,
     "aliases": ["cc", "create"],
     "category": "miscellaneous",
     "description": "Creates new channel with channel-name and nsfw if specified",
