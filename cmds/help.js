@@ -30,6 +30,16 @@ module.exports.run = async (bot, message, args) => {
             console.log(command.config.name)
             cmds += `\`\`${command.config.name}\`\`\n`
         });
+        let aliases = "";
+        bot.commands.forEach(command => {
+            console.log(command.config.aliases)
+            aliases += `\`\`${command.config.aliases}\`\`\n`
+        });
+        let usage = "";
+        bot.commands.forEach(command => {
+            console.log(command.config.usage)
+            usage += `\`\`${command.config.usage}\`\`\n`
+        });
 
         let Sembed = new Discord.RichEmbed()
         .setColor("RANDOM")
@@ -38,6 +48,8 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
         .setDescription(`These are the avaliable commands for the HackWump!\nThe bot prefix is: ${prefix}`)
         .addField(`Commands:`, cmds)
+        .addField(`Command Aliases:`, aliases)
+        .addField(`Command usages:`, usage)
         .setFooter("HackWump", bot.user.displayAvatarURL)
         message.channel.send(Sembed)
     }
@@ -45,7 +57,7 @@ module.exports.run = async (bot, message, args) => {
     module.exports.config = {
         name: "help",
         aliases: ["h", "halp", "commands"],
-        usage: "(command)",
+        usage: `${Config.Prefix}help`,
         category: "miscellaneous",
         description: "Displays all commands that the bot has.",
         accessableby: "Members"

@@ -1,11 +1,12 @@
 
 module.exports.run = async (bot, message, args) => {
-    message.channel.send("bread?").catch(console.error);
+    const m = await message.channel.send(`Pong! Latency is ${Math.round(bot.ping)}ms`);
+  
  }
 
 module.exports.config= {
-    "name": "bread",
-    "aliases": ["h", "halp", "commands"],
+    "name": "ping",
+    "aliases": ["P", "Ping", "p"],
     "usage": "(command)",
     "category": "miscellaneous",
     "description": "Displays all commands that the bot has.",
